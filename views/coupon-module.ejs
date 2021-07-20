@@ -1,0 +1,249 @@
+ <% include ./partials/header %>
+        <!-- ============================================================== -->
+        <!-- end left sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+ <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="container-fluid  dashboard-content">
+                <!-- ============================================================== -->
+                <!-- pagehader  -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <h3 class="mb-2">Coupon Panel</h3> 
+                            <!-- <a class="btn btn btn-info" href="Review-Module.html" style="float: right;">Add Coupon</a> -->
+                            <p class="pageheader-text">Lorem ipsum dolor sit ametllam fermentum ipsum eu porta consectetur adipiscing elit.Nullam vehicula nulla ut egestas rhoncus.</p>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">coupon module</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- pagehader  -->
+                <!-- ============================================================== -->
+           
+                <!-- ============================================================== -->
+                <!-- revenue  -->
+                <!-- ============================================================== -->
+            
+
+
+
+           
+
+
+
+
+                   <div class="row">
+                    
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Create Coupon</h5>
+                            <div class="card-body p-0">
+                                
+
+
+    <form class="splash-container " action="/coupon-module" method="POST">
+        <div class="card ">
+               
+            <div class="card-header">
+                <h3 class="mb-1">Create New Coupon</h3>
+                <!-- <p>Please enter your review information.</p> -->
+            </div>
+            <div class="card-body">
+               <!--  <div class="form-group" id="pick-image" style="display: block;" required="">
+                        <h6>Choose an Image</h6>
+                        <input class="form-control form-control-lg" name="file" type="file" accept="image/*" id="file">
+                </div> -->
+
+                 <div class="form-group">
+                    <input class="form-control form-control-lg" type="text" name="title" required="" placeholder="Title" autocomplete="on">
+                </div>
+                 <div class="form-group">
+                <textarea  class="form-control form-control-lg" type="" id="description" name="description" placeholder="Description" ></textarea>
+                 </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" type="text" name="couponcode" required="" placeholder="Coupon Code" autocomplete="on">
+                </div>
+              
+              <div class="form-group">
+                    <input class="form-control form-control-lg" type="date" name="date" required="" placeholder="Valid Till" autocomplete="on">
+                </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" type="number" name="limit" default="-1" required="" placeholder="Limited Use Default:No limit" autocomplete="on">
+                </div>
+                
+                 
+                   <div class=" form-group center">
+                        <select  id="category" class="custom-select sources" name="product" onchange="product_c(event)">
+                          <option  value="All" selected="selected">All Products</option>
+                          <option  value="Single">Single</option>
+                          <option  value="Category">Category</option>
+                          <option  value="Brand">Brand</option>
+                          
+                          
+                        </select>
+                </div>
+
+                <div class=" form-group center">
+                    <select  id="category" class="custom-select sources" name="user">
+                         
+                                           
+                      <option  value="All" selected="selected">All User</option>
+                      <option  value="New">New User</option>
+                      <option  value="Repeat">Repeat User</option>                      
+                      
+                    </select>
+            </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" type="text" name="whydowefall" placeholder="Single/Category/Brand" autocomplete="on" style="display:none">
+                </div>
+
+                 
+
+                <!-- <div class="form-group center">
+                        <select  id="category" class="custom-select sources" name="category">
+                          <option  value="" >----Product Type----</option>     
+                                               
+                          <option  value="Self">Self</option>
+                          <option  value="Afiliate">Afiliate</option>
+                          
+                          
+                        </select>
+                </div> -->
+                
+             
+               <!-- 
+                <div class="form-group">
+                    <input class="form-control form-control-lg" type="text" name="title" required="" placeholder="Title" autocomplete="on">
+                </div>
+                 <div class="form-group">
+                <textarea  class="form-control form-control-lg" type="" id="description" name="description" placeholder="description" ></textarea>
+                 </div>
+                 <br> -->
+
+
+                
+                
+                <!-- <label for="description">Subject</label> -->
+ 
+               
+               <!--  <div class="form-group">
+                    <input class="form-control form-control-lg"  type="number" name="price" placeholder="Price" autocomplete="on">
+                </div>
+               <h4> Prices on other platforms</h4>
+
+
+                <div class="form-group row">
+                    <label class="col-12 col-sm-5 col-form-label text-sm-right">Price on Amazon</label>
+                    <div class="col-12 col-sm-7 col-lg-6">
+                            <input type="text" required="" data-parsley-minlength="6" placeholder="" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-12 col-sm-5 col-form-label text-sm-right">Price on Tata Cliq</label>
+                    <div class="col-12 col-sm-7 col-lg-6">
+                            <input type="text" required="" data-parsley-minlength="6" placeholder="" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-12 col-sm-5 col-form-label text-sm-right">Price on Flipkart</label>
+                    <div class="col-12 col-sm-7 col-lg-6">
+                            <input type="text" required="" data-parsley-minlength="6" placeholder="" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-12 col-sm-5 col-form-label text-sm-right">Price on Paytm Mall</label>
+                    <div class="col-12 col-sm-7 col-lg-6">
+                            <input type="text" required="" data-parsley-minlength="6" placeholder="" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-12 col-sm-5 col-form-label text-sm-right">Price on Snapdeal</label>
+                    <div class="col-12 col-sm-7 col-lg-6">
+                            <input type="text" required="" data-parsley-minlength="6" placeholder="" class="form-control">
+                    </div>
+                </div>
+
+
+                
+                <div class="form-group">
+                    <label class="custom-control custom-checkbox">
+                        <input class="custom-control-input" name="isTop" type="checkbox" value="true"><span class="custom-control-label">Top Product</span>
+                    </label>
+                </div> -->
+                <div class="form-group pt-2">
+                    <button class="btn btn-block btn-warning" type="submit">Create Coupon</button>
+                </div>
+             
+               
+         
+        </div>
+    </form>
+                            </div>
+                        </div>
+                    </div>
+</div>
+
+
+       <!--          <div class="row">
+                    
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">News Details Table</h5>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                  hiiiii
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+</div> -->
+                    <!-- ============================================================== -->
+                    <!-- end top selling products  -->
+                    <!-- ============================================================== -->
+    <script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <!-- bootstrap bundle js-->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <!-- slimscroll js-->
+    <script src="assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <!-- chartjs js-->
+    <script src="assets/vendor/charts/charts-bundle/Chart.bundle.js"></script>
+    <script src="assets/vendor/charts/charts-bundle/chartjs.js"></script>
+    <script>
+    function product_c(e){
+        console.log(e.target.value)
+        console.log(document.getElementsByName("whydowefall"))
+        if(e.target.value =="All"){
+         
+          document.getElementsByName("whydowefall")[0].style.display="none";
+        }
+        else{
+            document.getElementsByName("whydowefall")[0].style.display="block";
+        }
+    }
+    </script>
+    <!-- main js-->
+    <script src="assets/libs/js/main-js.js"></script>
+    <!-- jvactormap js-->
+    <script src="assets/vendor/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="assets/vendor/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- sparkline js-->
+    <script src="assets/vendor/charts/sparkline/jquery.sparkline.js"></script>
+    <script src="assets/vendor/charts/sparkline/spark-js.js"></script>
+     <!-- dashboard sales js-->
+    <script src="assets/libs/js/dashboard-sales.js"></script>
+</body>
+ 
+</html>

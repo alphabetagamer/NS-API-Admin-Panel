@@ -1,0 +1,504 @@
+<% include ./partials/header %>
+        <!-- ============================================================== -->
+        <!-- end left sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+ <!-- wrapper  -->
+     <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="influence-profile">
+                <div class="container-fluid dashboard-content ">
+                    <!-- ============================================================== -->
+                    <!-- pageheader -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h3 class="mb-2">User Profile </h3>
+                                <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+                                <div class="page-breadcrumb">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end pageheader -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- content -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <!-- ============================================================== -->
+                        <!-- profile -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12 col-12">
+                            <!-- ============================================================== -->
+                            <!-- card profile -->
+                            <!-- ============================================================== -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="user-avatar text-center d-block">
+                                        <img src="<%= user.profile_image %>" alt="User Avatar" class="rounded-circle user-avatar-xxl">
+                                        <!-- <i class="fa fa-user fa-5x"></i> -->
+                                    </div>
+                                    <div class="text-center">
+                                        <h2 class="font-24 mb-0"><%= user.name.first_name%><%= user.name.last_name%></h2>
+                                        <!-- <p>Project Manager @Influnce</p> -->
+                                        <!-- <div>
+                                            <p class="text-muted"> Tuesday, July 9, 2019 2:38 PM</p>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="card-body border-top">
+                                    <h3 class="font-16">Contact Information</h3>
+                                    <div class="">
+                                        <ul class="list-unstyled mb-0">
+                                        <li class="mb-2"><i class="fas fa-fw fa-envelope mr-2"></i><%= user.email%></li>
+                                        <li class="mb-2"><i class="fas fa-fw fa-phone mr-2"></i><%= user.mobile%></li>
+                                        <li class="mb-2"><i class="fas fa-fw fa-home mr-2"></i><%= user.address[0].city%></li>
+                                        <li class="mb-0"><i class="fas fa-fw fa-home mr-2"></i><%= user.address[0].state%></li>
+
+
+
+                                    </ul>
+                                    </div>
+                                </div>
+                                <div class="card-body border-top">
+                                    <h3 class="font-16">Refer Code</h3>
+                                    <h1 class="mb-0"><%= user.referral_code%></h1>
+                                    <div class="rating-star">
+                                        <!-- <i class="fa fa-fw fa-star"></i>
+                                        <i class="fa fa-fw fa-star"></i>
+                                        <i class="fa fa-fw fa-star"></i>
+                                        <i class="fa fa-fw fa-star"></i>
+                                        <i class="fa fa-fw fa-star"></i> -->
+                                        total referrals : <p class="d-inline-block text-dark"><%= refer_l %> </p>
+                                    </div>
+                                </div>
+                                <div class="card-body border-top">
+                                    <h3 class="font-16">Other Info</h3>
+                                    <div class="">
+                                        <ul class="mb-0 list-unstyled">
+
+                                            <li class="mb-1"> Gender : <%= user.gender %></li>
+                                            <!-- <li class="mb-1"> Device Name :Le 4000</li> -->
+                                            <li class="mb-1"> Signed Up :<%= user.join_date %></li>
+                                            <!-- <li class="mb-1"> Gender : Male</li> -->
+                                            <!-- <li class="mb-1"> Gender : Male</li> -->
+                                            <!--                                             
+                                        <li class="mb-1"><a href="#"><i class="fab fa-fw fa-facebook-square mr-1 facebook-color"></i>fb.me/michaelchristy</a></li>
+                                        <li class="mb-1"><a href="#"><i class="fab fa-fw fa-twitter-square mr-1 twitter-color"></i>twitter.com/michaelchristy</a></li>
+                                        <li class="mb-1"><a href="#"><i class="fab fa-fw fa-instagram mr-1 instagram-color"></i>instagram.com/michaelchristy</a></li>
+                                        <li class="mb-1"><a href="#"><i class="fas fa-fw fa-rss-square mr-1 rss-color"></i>michaelchristy.com/blog</a></li>
+                                        <li class="mb-1"><a href="#"><i class="fab fa-fw fa-pinterest-square mr-1 pinterest-color"></i>pinterest.com/michaelchristy</a></li>
+                                        <li class="mb-1"><a href="#"><i class="fab fa-fw fa-youtube mr-1 youtube-color"></i>youtube/michaelchristy</a></li> -->
+                                    </ul>
+                                    </div>
+                                </div>
+                               
+                                <!-- <div class="text-center">
+                                    Current Status:  <b> Complete</b> 
+                                </div> -->
+                            </div>
+                            <!-- ============================================================== -->
+                            <!-- end card profile -->
+                            <!-- ============================================================== -->
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end profile -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- campaign data -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-9 col-lg-9 col-md-7 col-sm-12 col-12">
+                            <!-- ============================================================== -->
+                            <!-- campaign tab one -->
+                            <!-- ============================================================== -->
+                            <div class="influence-profile-content pills-regular">
+                                <ul class="nav nav-pills mb-3 nav-justified" id="pills-tab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="pills-campaign-tab" data-toggle="pill" href="#pills-campaign" role="tab" aria-controls="pills-campaign" aria-selected="true">Statistics</a>
+                                    </li>
+                                   
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab" aria-controls="pills-review" aria-selected="false">History</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-msg-tab" data-toggle="pill" href="#pills-msg" role="tab" aria-controls="pills-msg" aria-selected="false">Send Messages</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane fade show active" id="pills-campaign" role="tabpanel" aria-labelledby="pills-campaign-tab">
+                                        <div class="row">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <div class="section-block">
+                                                    <h3 class="section-title">User Stats</h3>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h1 class="mb-1">30</h1>
+                                                        <p>Use Time</p>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            <!-- <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h1 class="mb-1">68</h1>
+                                                        <p>Highest Active time</p>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            <!-- <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h1 class="mb-1">8</h1>
+                                                        <p>Active time rank</p>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h1 class="mb-1"><%= order_t%></h1>
+                                                        <p>total products purchased </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h1 class="mb-1"><%= refer_l%></h1>
+                                                            <p>refer friends</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <h1 class="mb-1">4</h1>
+                                                                <p>Subscriptions purchased</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <h1 class="mb-1"><%= tote%></h1>
+                                                                    <p>total amount spent</p>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+
+                                                    <!-- <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <h1 class="mb-1">45</h1>
+                                                                    <p>total time app was opened</p>
+                                                                </div>
+                                                            </div>
+                                                    </div> -->
+                                                    <!-- <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <h1 class="mb-1">90</h1>
+                                                                    <p>total ad time earned</p>
+                                                                </div>
+                                                            </div>
+                                                    </div> -->
+                                             
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-packages" role="tabpanel" aria-labelledby="pills-packages-tab">
+                                        <div class="row">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <div class="section-block">
+                                                    <h2 class="section-title">My Packages</h2>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                                                <div class="card">
+                                                    <div class="card-header bg-primary text-center p-3 ">
+                                                        <h4 class="mb-0 text-white"> Basic</h4>
+                                                    </div>
+                                                    <div class="card-body text-center">
+                                                        <h1 class="mb-1">$150</h1>
+                                                        <p>Per Month Plateform</p>
+                                                    </div>
+                                                    <div class="card-body border-top">
+                                                        <ul class="list-unstyled bullet-check font-14">
+                                                            <li>Facebook, Instagram, Pinterest,Snapchat.</li>
+                                                            <li>Guaranteed follower growth for increas brand awareness.</li>
+                                                            <li>Daily updates on choose platforms</li>
+                                                            <li>Stronger customer service through daily interaction</li>
+                                                            <li>Monthly progress report</li>
+                                                            <li>1 Million Followers</li>
+                                                        </ul>
+                                                        <a href="#" class="btn btn-outline-secondary btn-block btn-lg">Get Started</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                                                <div class="card">
+                                                    <div class="card-header bg-info text-center p-3">
+                                                        <h4 class="mb-0 text-white"> Standard</h4>
+                                                    </div>
+                                                    <div class="card-body text-center">
+                                                        <h1 class="mb-1">$350</h1>
+                                                        <p>Per Month Plateform</p>
+                                                    </div>
+                                                    <div class="card-body border-top">
+                                                        <ul class="list-unstyled bullet-check font-14">
+                                                            <li>Facebook, Instagram, Pinterest,Snapchat.</li>
+                                                            <li>Guaranteed follower growth for increas brand awareness.</li>
+                                                            <li>Daily updates on choose platforms</li>
+                                                            <li>Stronger customer service through daily interaction</li>
+                                                            <li>Monthly progress report</li>
+                                                            <li>2 Blog Post & 3 Social Post</li>
+                                                            <li>5 Millions Followers</li>
+                                                            <li>Growth Result</li>
+                                                        </ul>
+                                                        <a href="#" class="btn btn-secondary btn-block btn-lg">Get Started</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                                                <div class="card">
+                                                    <div class="card-header bg-primary text-center p-3">
+                                                        <h4 class="mb-0 text-white">Premium</h4>
+                                                    </div>
+                                                    <div class="card-body text-center">
+                                                        <h1 class="mb-1">$550</h1>
+                                                        <p>Per Month Plateform</p>
+                                                    </div>
+                                                    <div class="card-body border-top">
+                                                        <ul class="list-unstyled bullet-check font-14">
+                                                            <li>Facebook, Instagram, Pinterest,Snapchat.</li>
+                                                            <li>Guaranteed follower growth for increas brand awareness.</li>
+                                                            <li>Daily updates on choose platforms</li>
+                                                            <li>Stronger customer service through daily interaction</li>
+                                                            <li>Monthly progress report & Growth Result</li>
+                                                            <li>4 Blog Post & 6 Social Post</li>
+                                                        </ul>
+                                                        <a href="#" class="btn btn-secondary btn-block btn-lg">Contact us</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-review" role="tabpanel" aria-labelledby="pills-review-tab">
+                                        <div class="card">
+                                            <h5 class="card-header">History</h5>
+
+
+                                            <div class="row">
+                                                    <!-- ============================================================== -->
+                                                    <!-- top selling products  -->
+                                                    <!-- ============================================================== -->
+                                                    <div class="col-xl-10 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                        <div class="card">
+                                                            <h5 class="card-header">Referal List</h5>
+                                                            <div class="card-body p-0">
+                                                                <div class="table-responsive">
+                                                                    <table class="table">
+                                                                        <thead class="bg-light">
+                                                                            <tr class="border-0">
+                                                                                <th class="border-0">#</th>
+                                                                                <th class="border-0">Name</th>
+                                                                                <th class="border-0">Amount</th>
+                                                                                <th class="border-0">Time</th>
+                                                                                <th class="border-0">Status</th>
+                                                                                
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                           
+                                                                            <tr>
+                                                                                <td>#1</td>
+                                                                                <!-- <td>
+                                                                                    <div class="m-r-10"><img src="assets/images/product-pic.jpg" alt="user" class="rounded" width="45"></div>
+                                                                                </td> -->
+                                                                                <td>username1 </td>
+                                                                                <td>4500</td>
+                                                                                <td>Tuesday, July 9, 2019 2:38 PM</td>
+                                                                                <td>Complete</td>
+                                                                                
+                                                                            </tr>
+                                                                       
+                                                                            <!-- <tr>
+                                                                                <td colspan="8"><a href="#" class="btn btn-outline-light float-right">View Details</a></td>
+                                                                            </tr> -->
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                
+                                                </div>
+
+
+                                                <div class="row">
+                                                        <!-- ============================================================== -->
+                                                        <!-- top selling products  -->
+                                                        <!-- ============================================================== -->
+                                                        <div class="col-xl-10 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                            <div class="card">
+                                                                <h5 class="card-header">Order List</h5>
+                                                                <div class="card-body p-0">
+                                                                    <div class="table-responsive">
+                                                                       <table class="table">
+                                        <thead class="bg-light">
+                                            <tr class="border-0">
+                                                <th class="border-0">#</th>
+                                                <th class="border-0">image</th>
+                                                <th class="border-0">Product</th>
+                                                <th class="border-0">Description</th>
+                                               
+                                                <th class="border-0">Order id</th>
+                                                <th class="border-0">Price</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% for(var i=0;i< items.length ; i++){ %>
+                                                  <tr>
+                                                <td><i><%= i+1 %></i></td>
+                                                <td>
+                                                    <div class="m-r-10"><img src="<%= items[i][0].images[0].image%>"    alt="user" class="rounded" width="45"></div>
+                                                </td>
+                                                <td><a><%= items[i][0].name %></a></td>
+                                                <td>Lorem ipsum......</td>
+                                                
+                                                
+                                                <td><%= items[i][1] %></td>
+                                                <td><%= items[i][0].price %></td>
+
+                                            </tr>
+                                            <% } %>
+                                                 
+                                        </tbody>
+                                    </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                    
+                                                    </div>
+                                                                        
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-msg" role="tabpanel" aria-labelledby="pills-msg-tab">
+                                        <div class="card">
+                                            <h5 class="card-header">Send Messages</h5>
+                                            <div class="card-body">
+                                                <form>
+                                                    <div class="row">
+                                                        <div class="offset-xl-3 col-xl-6 offset-lg-3 col-lg-3 col-md-12 col-sm-12 col-12 p-4">
+                                                           
+                                                            <div class="form-group">
+                                                                <label for="subject">Subject</label>
+                                                                <input type="text" class="form-control form-control-lg" id="subject" placeholder="">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="messages">Messgaes</label>
+                                                                <textarea class="form-control" id="messages" rows="3"></textarea>
+                                                            </div>
+                                                            <button type="submit" class="btn btn-secondary float-left">Send Notification</button>
+                                                            <button type="submit" class="btn btn-primary float-right">Send Message</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ============================================================== -->
+                            <!-- end campaign tab one -->
+                            <!-- ============================================================== -->
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end campaign data -->
+                        <!-- ============================================================== -->
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- end content -->
+            <!-- ============================================================== -->
+            <div class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                           Copyright © 2018 . All rights reserved. Dashboard by Daphnis Labs.
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="text-md-right footer-links d-none d-sm-block">
+                                <a href="javascript: void(0);">About</a>
+                                <a href="javascript: void(0);">Support</a>
+                                <a href="javascript: void(0);">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- end footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- end wrapper -->
+        <!-- ============================================================== -->
+    <!-- </div> -->
+    <!-- ============================================================== -->
+    <!-- end main wrapper -->
+    <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- pagehader  -->
+                <!-- ============================================================== -->
+             
+              
+        
+
+
+                    <!-- ============================================================== -->
+                    <!-- end top selling products  -->
+                    <!-- ============================================================== -->
+    <script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <!-- bootstrap bundle js-->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <!-- slimscroll js-->
+    <script src="assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <!-- chartjs js-->
+    <script src="assets/vendor/charts/charts-bundle/Chart.bundle.js"></script>
+    <script src="assets/vendor/charts/charts-bundle/chartjs.js"></script>
+   
+    <!-- main js-->
+    <script src="assets/libs/js/main-js.js"></script>
+    <!-- jvactormap js-->
+    <script src="assets/vendor/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="assets/vendor/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- sparkline js-->
+    <script src="assets/vendor/charts/sparkline/jquery.sparkline.js"></script>
+    <script src="assets/vendor/charts/sparkline/spark-js.js"></script>
+     <!-- dashboard sales js-->
+    <script src="assets/libs/js/dashboard-sales.js"></script>
+</body>
+ 
+</html>

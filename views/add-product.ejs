@@ -1,0 +1,314 @@
+<% include ./partials/header %>
+<link href="https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+
+
+ 
+        <!-- ============================================================== -->
+        <!-- end left sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+ <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="container-fluid  dashboard-content">
+                <!-- ============================================================== -->
+                <!-- pagehader  -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <h3 class="mb-2">Product Panel</h3> 
+                            <a class="btn btn btn-info" href="/add-products" style="float: right;">Add Products</a>
+                            <p class="pageheader-text">Lorem ipsum dolor sit ametllam fermentum ipsum eu porta consectetur adipiscing elit.Nullam vehicula nulla ut egestas rhoncus.</p>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">product module</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- pagehader  -->
+                <!-- ============================================================== -->
+           
+                <!-- ============================================================== -->
+                <!-- revenue  -->
+                <!-- ============================================================== -->
+            
+
+
+
+           
+
+
+
+
+                   <div class="row">
+                    
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Add Product Details</h5>
+                            <div class="card-body p-0">
+                                
+
+
+    <form class="splash-container " action="/add_product" method="POST" enctype="multipart/form-data">
+        <div class="card ">               
+            <div class="card-header">
+                <h3 class="mb-1">Add New Product</h3>
+                <p>Please enter your product information.</p>
+            </div>
+            <div class="card-body">
+                <div class="form-group" id="pick-image" style="display: block;" required="">
+                        <h6>Choose an Image</h6>
+                        <input class="form-control form-control-lg" name="file" type="file" accept="image/*" id="file">
+                </div>
+                <!-- <% var url="" 
+                if(locals.data){ url=data.images? data.images[0].image :""}
+                %>
+                <label for="url">Images</label>  
+                <input class="form-control form-control-lg"  type="text" name="url" placeholder="images" autocomplete="on" value='<%= url %>'> -->
+
+                <div class="form-group center">
+                    <label for="vegn">Type</label>  
+                        <select  id="vegn" class="custom-select sources" name="category2">
+
+                          <%
+                          if(locals.data){
+                            var options = [ "Veg" , "Non-veg" ];
+                            for ( var i = 0; i < options.length; i++ )
+                            {
+                                var selected = ( data.type_vn == options[i] ) ? "selected" : "";
+                                %><option value="<%=options[ i ] %>" <%=selected %>><%=options[i] %></option><%
+                            }
+                        }
+                        else{
+                            var options = [ "Veg" , "Non-veg" ];
+                            for ( var i = 0; i < options.length; i++ )
+                            {
+                                
+                                %><option value="<%=options[ i ] %>"><%=options[i] %></option><%
+                            }
+                        }
+                            %>
+                          
+                        </select>
+                </div>
+                
+                 <div class=" form-group center">
+                    <label for="category">category</label>  
+                        <select  id="category" class="custom-select sources" name="category">
+                            <%
+                            if(locals.data){
+                            var options = [ "Proteins" , "Bars","Drinks","Amino Acids","Vitamins","Fat Burner","L-carnitine","Accessories" ];
+                            for ( var i = 0; i < options.length; i++ )
+                            {
+                                var selected = ( data.type_vn == options[i] ) ? "selected" : "";
+                                %><option value="<%=options[ i ] %>" <%=selected %>><%=options[i] %></option><%
+                            }
+                        }
+                        else{
+                            var options = [ "Proteins" , "Bars","Drinks","Amino Acids","Vitamins","Fat Burner","L-carnitine","Accessories" ];
+                            for ( var i = 0; i < options.length; i++ )
+                            {
+                                
+                                %><option value="<%=options[ i ] %>" ><%=options[i] %></option><%
+                            }
+                        }
+                            %>
+                        </select>
+                </div>
+                <div class=" form-group center">
+                    <% 
+                        var cat=""
+                        var fla=""
+                        var name=""
+                        var id=""
+                        var weight=0
+                        var brand_na=""
+                        var vendor_na=""
+                        var cp=0
+                        var p=0
+                        var d=0
+                        var goal=""
+                        if(locals.data){
+                         weight=data.weight
+                         cp = data.current_price
+                         p=data.price
+                         d=data.discount
+                         name =data.name
+                        brand_na=brand_name
+                        vendor_na=vendor_name
+                        id=data.id
+                        var cat=""
+                        for(let a of data.categories){
+                            cat=cat+","+a.category
+                        }
+                        var fla=data.flavor
+                        for(let a of data.other_flavors){
+                            fla=fla+","+a.flavor
+                        }
+                        for(let a of data.goals){
+                            goal=goal+","+a.goal
+                        }
+                    }
+                    %>  <label for="cats">Sub-Categories</label>
+                        <input class="form-control form-control-lg"  value="<%= cat.substring(1)%>" type="text" name="cats" placeholder="Sub categories" autocomplete="on">
+                        <label for="flavors">Flavors</label>
+                        <input class="form-control form-control-lg"  value="<%= fla%>" type="text" name="flavors" placeholder="flavors" autocomplete="on">
+
+            </div>
+               
+               
+               
+
+
+               
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input class="form-control form-control-lg" value="<%= name%>" type="text" name="title" required="" placeholder="Title" autocomplete="on">
+                    <label for="vendor">Vendor</label>
+                    <input class="form-control form-control-lg" value="<%= vendor_na %>" type="text" name="vendor" required="" placeholder="vendor" autocomplete="on">
+                    <label for="brand">Brand Name</label>
+                    <input class="form-control form-control-lg" value="<%= brand_na %>" type="text" name="brand" required="" placeholder="brand" autocomplete="on">
+
+
+                </div>
+                 <div class="form-group">
+                <label for="description">Long Description</label>
+                <textarea  class="form-control form-control-lg" type="" id="description" name="description" placeholder="description" ></textarea>
+                
+                <label for="short_description">Short Description</label>
+                <textarea  class="form-control form-control-lg" type="" id="short_description" name="short_description" placeholder="short description" ></textarea>
+                <input  class="form-control form-control-lg" type="" style="display:none" value="<%= id%>" name="id"></input>
+                <label for="goals">Goals</label>                    
+                <input class="form-control form-control-lg"  value="<%= goal.substring(1) %>" type="text" name="goals" placeholder="Goals" autocomplete="on">
+                    
+            </div>
+                 <br>
+
+
+                
+                
+                <!-- <label for="description">Subject</label> -->
+ 
+               
+                <div class="form-group">
+                    <label for="weight">Weight</label>  
+                        <input class="form-control form-control-lg"  type="text" value="<%= weight %>" name="weight" placeholder="weight" autocomplete="on">
+                        <label for="price">Price</label>  
+                    <input class="form-control form-control-lg"  type="number" value="<%= p %>" name="price" placeholder="Price" autocomplete="on">
+                    <label for="cprice">Current Price</label>  
+                    <input class="form-control form-control-lg"  type="number" value="<%= cp %>" name="cprice" placeholder="Current Price" autocomplete="on">
+                    <label for="Discount">Discount</label>  
+                    <input class="form-control form-control-lg"  type="number" value="<%= d %>" name="dprice" placeholder="Discount" autocomplete="on">
+
+
+                </div>
+               <!-- <h4> Prices on other platforms</h4> -->
+
+
+                <!-- <div class="form-group row">
+                    <label class="col-12 col-sm-5 col-form-label text-sm-right">Price on Amazon</label>
+                    <div class="col-12 col-sm-7 col-lg-6">
+                            <input type="text" required="" data-parsley-minlength="6" placeholder="" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-12 col-sm-5 col-form-label text-sm-right">Price on Tata Cliq</label>
+                    <div class="col-12 col-sm-7 col-lg-6">
+                            <input type="text" required="" data-parsley-minlength="6" placeholder="" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-12 col-sm-5 col-form-label text-sm-right">Price on Flipkart</label>
+                    <div class="col-12 col-sm-7 col-lg-6">
+                            <input type="text" required="" data-parsley-minlength="6" placeholder="" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-12 col-sm-5 col-form-label text-sm-right">Price on Paytm Mall</label>
+                    <div class="col-12 col-sm-7 col-lg-6">
+                            <input type="text" required="" data-parsley-minlength="6" placeholder="" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-12 col-sm-5 col-form-label text-sm-right">Price on Snapdeal</label>
+                    <div class="col-12 col-sm-7 col-lg-6">
+                            <input type="text" required="" data-parsley-minlength="6" placeholder="" class="form-control">
+                    </div>
+                </div> -->
+
+
+                
+                <div class="form-group">
+                    <label class="custom-control custom-checkbox">
+                        <input class="custom-control-input" name="isTop" type="checkbox" value="true"><span class="custom-control-label">Top Product</span>
+                    </label>
+                </div>
+                <div class="form-group pt-2">
+                    <button class="btn btn-block btn-primary" type="submit" id="123">Add Product</button>
+                </div>
+             
+               
+         
+        </div>
+    </form>
+                            </div>
+                        </div>
+                    </div>
+</div>
+
+
+       <!--          <div class="row">
+                    
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">News Details Table</h5>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                  hiiiii
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+</div> -->
+                    <!-- ============================================================== -->
+                    <!-- end top selling products  -->
+                    <!-- ============================================================== -->
+    <script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <!-- bootstrap bundle js-->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <!-- slimscroll js-->
+    <script src="assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <!-- chartjs js-->
+    <script src="assets/vendor/charts/charts-bundle/Chart.bundle.js"></script>
+    <script src="assets/vendor/charts/charts-bundle/chartjs.js"></script>
+   <script>
+   $("#123").submit(function(e) {
+    e.preventDefault();
+});</script>
+    <!-- main js-->
+    <script src="assets/libs/js/main-js.js"></script>
+    <!-- jvactormap js-->
+    <script src="assets/vendor/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="assets/vendor/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- sparkline js-->
+    <script src="assets/vendor/charts/sparkline/jquery.sparkline.js"></script>
+    <script src="assets/vendor/charts/sparkline/spark-js.js"></script>
+     <!-- dashboard sales js-->
+    <script src="assets/libs/js/dashboard-sales.js"></script>
+    <!-- froala -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js"></script>
+    <script>
+        new FroalaEditor('textarea');
+      </script> 
+</body>
+ 
+</html>

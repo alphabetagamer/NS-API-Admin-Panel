@@ -1,0 +1,178 @@
+
+
+<% include ./partials/header %>
+<link rel="stylesheet" href="../assets/vendor/datepicker/tempusdominus-bootstrap-4.css" /> 
+ 
+<!-- wrapper  -->
+       <!-- ============================================================== -->
+       <div class="dashboard-wrapper">
+           <div class="dashboard-ecommerce">
+               <div class="container-fluid dashboard-content ">
+                   <!-- ============================================================== -->
+                   <!-- pageheader  -->
+                   <!-- ============================================================== -->
+                   <div class="row">
+                       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                           <div class="page-header">
+                               <h2 class="pageheader-title">News Admin Panel </h2>
+                               <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
+                               <div class="page-breadcrumb">
+                                   <nav aria-label="breadcrumb">
+                                       <ol class="breadcrumb">
+                                           <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                           <li class="breadcrumb-item active" aria-current="page">Datewise</li>
+                                       </ol>
+                                   </nav>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   <!-- ============================================================== -->
+                   <!-- end pageheader  -->
+                   <!-- ============================================================== -->
+                   <div class="ecommerce-widget">
+
+                       <form action="/datewise-query-orders" method="GET">
+                        <div class=" border-top">
+                            <h5>Start Date</h5>
+                            <!-- <div class="form-group" style="width: 30%">
+                                <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                                    <input type="text" name="start_date" class="form-control datetimepicker-input" data-target="#datetimepicker1" required/>
+                                    <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                                        <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        <input type="date" name="start_date" required/>
+                        </div>
+                        <div class="border-top">
+                            <h5>End Date</h5>
+                            <!-- <div class="form-group" style="width: 30%">
+                                <div class="input-group date" id="datetimepicker2" data-target-input="nearest">
+                                    <input type="text" name="end_date"class="form-control datetimepicker-input" data-target="#datetimepicker2" required/>
+                                    <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
+                                        <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        <input type="date" name="end_date" required/>
+
+                        </div>
+
+                           <input type="submit" class="btn btn-success btn-sm " style="margin-top: 10" value="Search">
+                       </form>
+
+                       <div class="row">
+                           <!-- ============================================================== -->
+                     
+                           <!-- ============================================================== -->
+
+                                         <!-- recent orders  -->
+                           <!-- ============================================================== -->
+                           <div class="col-xl-10 col-lg-12 col-md-6 col-sm-12 col-12">
+                               <div class="card">
+                                   <h5 class="card-header">Datewise</h5>
+                                   <div class="card-body p-0">
+                                       <div class="table-responsive">
+                                           <table class="table">
+                                               <thead class="bg-light">
+                                                   <tr class="border-0">
+                                                       <th class="border-0">#</th>
+                                                       <th class="border-0">Date</th>
+                                                       <th class="border-0">Count</th>
+                                                   </tr>
+                                               </thead>
+                                               <tbody>
+
+                                                   <%if(typeof list!== 'undefined'){%>
+                                                   <%list.forEach( (date,index)=>{%>
+                                                       
+                                                   
+                                                   <tr>
+                                                       <td><%=index+1%></td>
+                                                      
+                                                       <td><%=date._id.day%>/<%=date._id.month%>/<%=date._id.year%> </td>
+                                                       <td><%=date.count%> </td>
+                                                   </tr>
+                                                 <%})%>
+                                                   <!-- <tr>
+                                                       <td colspan="9"><a href="#" class="btn btn-outline-light float-right">View Details</a></td>
+                                                   </tr> -->
+                                                 <%}%>
+                                                   
+                                               </tbody>
+                                           </table>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           <!-- ============================================================== -->
+                           <!-- end recent orders  -->
+
+   
+                           <!-- ============================================================== -->
+                           <!-- ============================================================== -->
+                           <!-- customer acquistion  -->
+                           <!-- ============================================================== -->
+                           <!-- <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                               <div class="card">
+                                   <h5 class="card-header">Customer Acquisition</h5>
+                                   <div class="card-body">
+                                       <div class="ct-chart ct-golden-section" style="height: 354px;"></div>
+                                       <div class="text-center">
+                                           <span class="legend-item mr-2">
+                                                   <span class="fa-xs text-primary mr-1 legend-tile"><i class="fa fa-fw fa-square-full"></i></span>
+                                           <span class="legend-text">Returning</span>
+                                           </span>
+                                           <span class="legend-item mr-2">
+
+                                                   <span class="fa-xs text-secondary mr-1 legend-tile"><i class="fa fa-fw fa-square-full"></i></span>
+                                           <span class="legend-text">First Time</span>
+                                           </span>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div> -->
+                           <!-- ============================================================== -->
+                           <!-- end customer acquistion  -->
+                           <!-- ============================================================== -->
+                       </div>
+                      
+               
+                   </div>
+               </div>
+           </div>
+           <!-- ============================================================== -->
+           <!-- footer -->
+           <!-- ============================================================== -->
+           <div class="footer">
+               <div class="container-fluid">
+                   <div class="row">
+                       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            Copyright © 2018. All rights reserved. Dashboard by Daphnis Labs</a>.
+                       </div>
+                       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                           
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <!-- ============================================================== -->
+           <!-- end footer -->
+           <!-- ============================================================== -->
+       </div>
+       <!-- ============================================================== -->
+       <!-- end wrapper  -->
+       <!-- ============================================================== -->
+   </div>
+   <script src="/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+   <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+   <script src="/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+   <script src="/assets/libs/js/main-js.js"></script>
+   <script src="/assets/vendor/datepicker/moment.js"></script>
+    <script src="/assets/vendor/datepicker/tempusdominus-bootstrap-4.js"></script>
+    <script src="/assets/vendor/datepicker/datepicker.js"></script>
+
+</body>
+
+</html>
